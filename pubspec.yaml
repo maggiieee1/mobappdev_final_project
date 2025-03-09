@@ -56,6 +56,13 @@ flutter:
     - assets/facebook.png
     - assets/google.png
     - assets/sproutly.png
+    - assets/FLanding.png
+    - assets/plant1.png
+    - assets/plant2.png
+    - assets/plant3.png
+    - assets/user1.png
+    - assets/user2.png
+    - assets/user3.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

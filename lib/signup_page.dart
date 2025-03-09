@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'firstLanding_page.dart'; 
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class SignUpPage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.white, // Ensures white background
+      backgroundColor: Colors.white, 
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.green),
@@ -44,7 +45,7 @@ class SignUpPage extends StatelessWidget {
                   Checkbox(
                     value: false,
                     onChanged: (value) {},
-                    activeColor: Colors.green, // Makes checkbox color match theme
+                    activeColor: Colors.green, 
                   ),
                   Expanded(
                     child: Text(
@@ -62,7 +63,12 @@ class SignUpPage extends StatelessWidget {
                     backgroundColor: Colors.green,
                     padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => FirstLandingPage()), // Navigate to FirstLandingPage
+                    );
+                  },
                   child: Text(
                     "Sign Up",
                     style: TextStyle(fontSize: screenWidth * 0.045, color: Colors.white),
@@ -106,7 +112,7 @@ class SignUpPage extends StatelessWidget {
           labelText: label,
           border: OutlineInputBorder(),
           filled: true,
-          fillColor: Colors.white, // Ensures input field is also pure white
+          fillColor: Colors.white, 
         ),
       ),
     );

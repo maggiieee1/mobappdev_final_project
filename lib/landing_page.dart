@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-import 'signup_page.dart'; // Import Sign Up Page
+import 'signup_page.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -48,7 +48,7 @@ class LandingPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(
-                      width: double.infinity, // Full width button
+                      width: double.infinity,
                       child: OutlinedButton(
                         onPressed: () {
                           Navigator.push(
@@ -58,11 +58,11 @@ class LandingPage extends StatelessWidget {
                         },
                         style: OutlinedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
-                            vertical: screenHeight * 0.025, // Taller buttons
+                            vertical: screenHeight * 0.025,
                           ),
                           side: BorderSide(color: Colors.green, width: 2),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10), // Slightly rounded edges
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                         child: Text(
@@ -77,7 +77,7 @@ class LandingPage extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.02),
                     SizedBox(
-                      width: double.infinity, // Full width button
+                      width: double.infinity, 
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -87,11 +87,11 @@ class LandingPage extends StatelessWidget {
                         },
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
-                            vertical: screenHeight * 0.025, // Taller buttons
+                            vertical: screenHeight * 0.025,
                           ),
                           backgroundColor: Colors.green,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10), // Rounded edges
+                            borderRadius: BorderRadius.circular(10), 
                           ),
                         ),
                         child: Text(

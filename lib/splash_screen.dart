@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'landing_page.dart'; // Import Landing Page
+import 'landing_page.dart'; 
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Center(
             child: Image.asset(
               'assets/sproutly.png',
-              width: screenWidth * 0.5, // Responsive image size
+              width: screenWidth * 0.5, 
             ),
           ),
           SizedBox(height: 20),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';  // Import Splash Screen
-import 'landing_page.dart';  // Import Landing Page
+import 'splash_screen.dart';  
+import 'landing_page.dart';
 
 void main() {
   runApp(SproutlyApp());

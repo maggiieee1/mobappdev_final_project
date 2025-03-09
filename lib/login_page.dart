@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'firstLanding_page.dart'; // Import FirstLandingPage
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -68,7 +69,12 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.03),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => FirstLandingPage()), // Navigate to FirstLandingPage
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
@@ -78,7 +84,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    'Login',
+                    'Log In',
                     style: TextStyle(fontSize: screenWidth * 0.05, color: Colors.white),
                   ),
                 ),
