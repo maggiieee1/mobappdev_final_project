@@ -1,108 +1,138 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.green),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Login Account',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.green),
-            ),
-            Text(
-              'Welcome Back!',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              decoration: InputDecoration(labelText: 'Email Address'),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                suffixIcon: Icon(Icons.visibility),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: screenHeight * 0.02),
+              Text(
+                'Login Account',
+                style: TextStyle(
+                  fontSize: screenWidth * 0.08,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green[800],
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              children: [
-                Checkbox(value: false, onChanged: (value) {}),
-                Text('Keep me logged in'),
-                Spacer(),
-                TextButton(
+              SizedBox(height: screenHeight * 0.005),
+              Text(
+                'Welcome Back!',
+                style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.grey[600]),
+              ),
+              SizedBox(height: screenHeight * 0.04),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email Address',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                  suffixIcon: Icon(Icons.visibility_off),
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.01),
+              Row(
+                children: [
+                  Checkbox(value: false, onChanged: (value) {}),
+                  Text('Keep me logged in'),
+                  Spacer(),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Forgot Password?'),
+                  ),
+                ],
+              ),
+              SizedBox(height: screenHeight * 0.03),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    'Login',
+                    style: TextStyle(fontSize: screenWidth * 0.05, color: Colors.white),
+                  ),
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.03),
+              Row(
+                children: [
+                  Expanded(child: Divider()),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Text('or sign in with'),
+                  ),
+                  Expanded(child: Divider()),
+                ],
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              Column(
+                children: [
+                  OutlinedButton.icon(
+                    onPressed: () {},
+                    icon: Image.asset('assets/google.png', height: screenHeight * 0.035),
+                    label: Text('Continue with Google'),
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: screenHeight * 0.015),
+                  OutlinedButton.icon(
+                    onPressed: () {},
+                    icon: Image.asset('assets/facebook.png', height: screenHeight * 0.035),
+                    label: Text('Continue with Facebook'),
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: screenHeight * 0.03),
+              Center(
+                child: TextButton(
                   onPressed: () {},
-                  child: Text('Forgot Password?', style: TextStyle(color: Colors.green)),
+                  child: Text(
+                    "Don't have an account? Sign Up",
+                    style: TextStyle(color: Colors.green),
+                  ),
                 ),
-              ],
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Handle Login Action
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding: EdgeInsets.symmetric(vertical: 12),
               ),
-              child: Center(child: Text('Login', style: TextStyle(color: Colors.white))),
-            ),
-            SizedBox(height: 20),
-            Row(
-              children: [
-                Expanded(child: Divider()),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Text('or sign in with'),
-                ),
-                Expanded(child: Divider()),
-              ],
-            ),
-            SizedBox(height: 20),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Handle Google Login
-              },
-              icon: Icon(Icons.g_mobiledata, color: Colors.white),
-              label: Text('Continue With Google'),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-            ),
-            SizedBox(height: 10),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Handle Facebook Login
-              },
-              icon: Icon(Icons.facebook, color: Colors.white),
-              label: Text('Continue With Facebook'),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue[800]),
-            ),
-            Spacer(),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  // Navigate to Signup Page (if needed)
-                },
-                child: Text('Don’t have an account? Sign Up', style: TextStyle(color: Colors.green)),
-              ),
-            ),
-          ],
+              SizedBox(height: screenHeight * 0.02),
+            ],
+          ),
         ),
       ),
     );
