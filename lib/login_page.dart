@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -93,32 +95,34 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: screenHeight * 0.02),
-              Column(
-                children: [
-                  OutlinedButton.icon(
-                    onPressed: () {},
-                    icon: Image.asset('assets/google.png', height: screenHeight * 0.035),
-                    label: Text('Continue with Google'),
-                    style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+              Center(
+                child: Column(
+                  children: [
+                    OutlinedButton.icon(
+                      onPressed: () {},
+                      icon: Image.asset('assets/google.png', height: screenHeight * 0.035),
+                      label: Text('Continue with Google'),
+                      style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02, horizontal: screenWidth * 0.15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: screenHeight * 0.015),
-                  OutlinedButton.icon(
-                    onPressed: () {},
-                    icon: Image.asset('assets/facebook.png', height: screenHeight * 0.035),
-                    label: Text('Continue with Facebook'),
-                    style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                    SizedBox(height: screenHeight * 0.015),
+                    OutlinedButton.icon(
+                      onPressed: () {},
+                      icon: Image.asset('assets/facebook.png', height: screenHeight * 0.035),
+                      label: Text('Continue with Facebook'),
+                      style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02, horizontal: screenWidth * 0.12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: screenHeight * 0.03),
               Center(

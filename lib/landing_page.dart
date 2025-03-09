@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+import 'signup_page.dart'; // Import Sign Up Page
 
 class LandingPage extends StatelessWidget {
   @override
@@ -41,52 +42,65 @@ class LandingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight * 0.15),
+              SizedBox(height: screenHeight * 0.12),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
                 child: Column(
                   children: [
-                    OutlinedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
-                        );
-                      },
-                      style: OutlinedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                          vertical: screenHeight * 0.02,
+                    SizedBox(
+                      width: double.infinity, // Full width button
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginPage()),
+                          );
+                        },
+                        style: OutlinedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.025, // Taller buttons
+                          ),
+                          side: BorderSide(color: Colors.green, width: 2),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10), // Slightly rounded edges
+                          ),
                         ),
-                        side: BorderSide(color: Colors.green, width: 2),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.05,
-                          color: Colors.green,
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: screenWidth * 0.05,
+                            color: Colors.green,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(height: screenHeight * 0.02),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                          vertical: screenHeight * 0.02,
+                    SizedBox(
+                      width: double.infinity, // Full width button
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignUpPage()), // Navigate to Sign Up Page
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.025, // Taller buttons
+                          ),
+                          backgroundColor: Colors.green,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10), // Rounded edges
+                          ),
                         ),
-                        backgroundColor: Colors.green,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          fontSize: screenWidth * 0.05,
-                          color: Colors.white,
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            fontSize: screenWidth * 0.05,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
